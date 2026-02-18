@@ -1,2 +1,2 @@
-# App para partidas Poké RPGARS
-App web progresiva para llevar partidas de mi campaña *Aventura en la región de Sinnoh* (RPGARS), basada en el *corebook* del proyecto [Pokérole](https://www.pokeroleproject.com/) y el set de datos [Pokerole-Data](https://github.com/Pokerole-Software-Development/Pokerole-Data). He diseñado esta app para mi uso personal y solo está disponible en español.
+# App para mi campaña Poké RPGARS
+App web progresiva para llevar mi campaña de [Pokémon: the Role Playing Game](https://www.pokeroleproject.com/) titulada *Aventura en la región de Sinnoh* (Poké RPGARS). Toda la info se basa en los videojuegos Pokémon, en el [*corebook*](https://www.pokeroleproject.com/resources) y en el set de datos [Pokerole-Data](https://github.com/Pokerole-Software-Development/Pokerole-Data). He diseñado esta app para mi uso personal y solo está disponible en español.
