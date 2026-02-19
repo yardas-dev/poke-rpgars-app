@@ -1,0 +1,12 @@
+services:
+    dev:
+        command: sh -c "NO_UPDATE_NOTIFIER=1 npm install --no-audit --no-fund && npm run dev"
+        image: node:25-alpine
+        ports: [5173:5173]
+        volumes: [.:/app]
+        working_dir: /app
+    cli:
+        image: node:25-alpine
+        profiles: [cli]
+        volumes: [.:/app]
+        working_dir: /app
