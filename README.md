@@ -8,7 +8,7 @@ App web progresiva para llevar mi campaña de [Pokémon: the Role Playing Game](
 
 ## Uso
 
-> **PENDIENTE A QUE SE APLIQUEN LOS CAMBIOS ⚠️**
+> **DESARROLLO EN CURSO ⚠️**
 
 1. Clona el repo: `git clone https://github.com/yardas-dev/poke-rpgars`
 1. Entra en el proyecto: `cd poke-rpgars`
@@ -17,3 +17,4 @@ App web progresiva para llevar mi campaña de [Pokémon: the Role Playing Game](
     - Sin Docker y con Node.js y NPM instalados:
         1. `npm install`
         2. `npm run dev`
+1. Visita la página en http://localhost:5173/
