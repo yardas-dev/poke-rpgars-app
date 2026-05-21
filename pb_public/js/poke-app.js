@@ -20,7 +20,7 @@ class PokeApp extends ComponenteBase {
         return html`
             <barra-navegacion></barra-navegacion>
 
-            <main class="section">
+            <main class="section mb-6">
                 ${rutaActual.vista}
             </main>
         `
