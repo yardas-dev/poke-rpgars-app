@@ -4,37 +4,6 @@ import { ComponenteBase } from "../components/componente-base.js"
 import "../components/ficha-personaje.js"
 
 class VistaPersonajes extends ComponenteBase {
-    static get properties() {
-        return {
-            personajes: { type: Array },
-        }
-    }
-
-    constructor() {
-        super()
-        this.personajes = []
-    }
-
-    connectedCallback() {
-        super.connectedCallback()
-        colecciones.addEventListener(
-            "descargaTerminada",
-            this.ejectutarAlTerminar
-        )
-    }
-
-    disconnectedCallback() {
-        colecciones.removeEventListener(
-            "descargaTerminada",
-            this.ejectutarAlTerminar
-        )
-        super.disconnectedCallback()
-    }
-
-    ejectutarAlTerminar = () => {
-        this.personajes = colecciones.personajes
-    }
-
     render() {
         return html`
             <p class="title">
@@ -44,16 +13,16 @@ class VistaPersonajes extends ComponenteBase {
             <div class="columns">
                 ${
                     this.personajes.filter(
-                        personaje => personaje.rol === "jugador"
-                    ).map(
-                        personaje => html`
-                            <div class="column">
-                                <ficha-personaje
-                                    .personaje=${personaje}
-                                ></ficha-personaje>
-                            </div>
-                        `
-                    )
+                            personaje => personaje.rol === "jugador"
+                        ).map(
+                            personaje => html`
+                                <div class="column">
+                                    <ficha-personaje
+                                        .personaje=${personaje}
+                                    ></ficha-personaje>
+                                </div>
+                            `
+                        )
                 }
             </div>
         `
