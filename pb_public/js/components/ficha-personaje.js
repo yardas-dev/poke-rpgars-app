@@ -446,7 +446,7 @@ class FichaPersonaje extends ComponenteBase {
     return html`
       <div class="card has-background-dark-soft">
         <cabecera-personaje
-          .registro=${this.personaje}
+          .personaje=${this.personaje}
           @alternar=${this.alternarContenido}
         ></cabecera-personaje>
 

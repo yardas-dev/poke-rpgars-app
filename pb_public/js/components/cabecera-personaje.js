@@ -4,17 +4,13 @@ import { ComponenteBase } from "../components/componente-base.js"
 class CabeceraPersonaje extends ComponenteBase {
     static get properties() {
         return {
-            registro: { type: Object },
+            personaje: { type: Object },
         }
     }
 
     constructor() {
         super()
-        this.registro = {}
-    }
-
-    connectedCallback() {
-        super.connectedCallback()
+        this.personaje = {}
     }
 
     alternarContenido() {
@@ -24,36 +20,36 @@ class CabeceraPersonaje extends ComponenteBase {
     }
 
     render() {
-        let claseColor = `has-background-${this.registro.color}-soft`
+        let claseColor = `has-background-${this.personaje.color}-soft`
 
         return html`
             <header
-                class="card-header ${claseColor} is-pointer"
+                class="card-header ${claseColor} is-clickable is-unselectable"
                 @click=${this.alternarContenido}
             >
                 <figure class="image is-96x96 m-4">
                     <img
-                        src=${this.registro.icono}
+                        src=${this.personaje.icono}
                         alt="Imagen no disponible"
                     />
                 </figure>
 
                 <p class="my-auto">
                     <strong class="is-size-4">
-                        ${this.registro.nombre}
+                        ${this.personaje.nombre}
                     </strong>
                     <br />
                     <small>
-                        ${this._normalizarMayus(this.registro.ocupacion)}
+                        ${this.mayus(this.personaje.ocupacion)}
                     </small>
                     <br />
                     <small>
-                        ${this._normalizarMayus(this.registro.concepto)}
+                        ${this.mayus(this.personaje.concepto)}
                     </small>
                     <br />
-                    <small class="has-text-${this.registro.color}-soft-invert">
-                        ${this.registro.edad} años,
-                        naturaleza ${this.registro.naturaleza.nombre}
+                    <small class="has-text-${this.personaje.color}-soft-invert">
+                        ${this.personaje.edad} años,
+                        naturaleza ${this.personaje.naturaleza.nombre}
                     </small>
                 </p>
             </header>
