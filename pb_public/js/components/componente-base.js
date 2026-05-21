@@ -1,4 +1,4 @@
-import { LitElement } from "https://cdn.jsdelivr.net/npm/lit@3.3.2/+esm"
+import { LitElement } from "https://cdn.jsdelivr.net/npm/lit@3.3.3/+esm"
 
 export class ComponenteBase extends LitElement {
     createRenderRoot() {
