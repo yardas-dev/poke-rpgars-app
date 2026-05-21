@@ -9,17 +9,28 @@ import "./views/vista-pokedex.js"
 const rutas = [
     {
         nombre: "/",
-        vista: html`<vista-personajes></vista-personajes>`
+        titulo: "Personajes",
+        vista: html`<vista-personajes></vista-personajes>`,
+        esVisible: true,
     },
     {
         nombre: "/equipos",
-        vista: html`<vista-equipos></vista-equipos>`
+        titulo: "Equipos",
+        vista: html`<vista-equipos></vista-equipos>`,
+        esVisible: true,
     },
     {
         nombre: "/combates",
-        vista: html`<vista-combates></vista-combates>`
+        titulo: "Combates",
+        vista: html`<vista-combates></vista-combates>`,
+        esVisible: true,
     },
     {
+        nombre: "/pokedex",
+        titulo: "Pokédex",
+        vista: html`<vista-pokedex></vista-pokedex>`,
+        esVisible: true,
+    },
         nombre: "/encuentros",
         vista: html`<vista-encuentros></vista-encuentros>`
     },

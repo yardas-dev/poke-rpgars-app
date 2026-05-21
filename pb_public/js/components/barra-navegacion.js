@@ -1,4 +1,5 @@
 import { html } from "https://cdn.jsdelivr.net/npm/lit@3.3.2/+esm"
+import rutas from "../rutas.js"
 import { ComponenteBase } from "./componente-base.js"
 
 class BarraNavegacion extends ComponenteBase {
@@ -6,24 +7,26 @@ class BarraNavegacion extends ComponenteBase {
         menuEstaActivo: { type: Boolean },
     }
 
-    obtenerClaseItem(ruta) {
-        return ruta === window.location.pathname ? "is-tab is-active" : ""
-    }
-
     alternarMenu() {
         this.menuEstaActivo = ! this.menuEstaActivo
     }
 
-    render() {
-        const items = [
-            { ruta: "/", texto: "Personajes" },
-            { ruta: "/equipos", texto: "Equipos" },
-            { ruta: "/combates", texto: "Combates" },
-            { ruta: "/encuentros", texto: "Encuentros" },
-            { ruta: "/pokedex", texto: "Pokédex" },
-        ]
+    renderizarRuta(ruta) {
+        let esFormatoPestana = window.innerWidth >= 1024
 
-        let claseIsActive = this.menuEstaActivo ? "is-active" : ""
+        let clasesAdicionales = ruta.nombre === window.location.pathname
+            ? (esFormatoPestana ? "is-tab" : "has-text-white") + " is-active"
+            : ""
+
+        return html`
+            <a class="navbar-item ${clasesAdicionales}" href=${ruta.nombre}>
+                ${ruta.titulo}
+            </a>
+        `
+    }
+
+    render() {
+        let claseMenuActivo = this.menuEstaActivo ? "is-active" : ""
 
         return html`
             <nav class="navbar">
@@ -35,12 +38,14 @@ class BarraNavegacion extends ComponenteBase {
                                 alt="Imagen no disponible"
                             />
                         </figure>
-                        <span>Poké RPGARS</span>
+                        <strong class="is-size-5">
+                            Poké RPGARS
+                        </strong>
                     </a>
 
                     <a
                         role="button"
-                        class="navbar-burger ${claseIsActive}"
+                        class="navbar-burger ${claseMenuActivo}"
                         @click=${this.alternarMenu}
                     >
                         <span aria-hidden="true"></span>
@@ -50,20 +55,16 @@ class BarraNavegacion extends ComponenteBase {
                     </a>
                 </div>
 
-                <div class="navbar-menu ${claseIsActive}">
+                <div class="navbar-menu ${claseMenuActivo}">
                     <div class="navbar-start">
                         ${
-                            items.map(
-                                item => html`
-                                    <a
-                                        class="navbar-item ${this.obtenerClaseItem(item.ruta)}"
-                                        href=${item.ruta}
-                                    >
-                                        ${item.texto}
-                                    </a>
-                                `
-                            )
+                            rutas.filter(
+                                    ruta => ruta.esVisible
+                                ).map(
+                                    ruta => this.renderizarRuta(ruta)
+                                )
                         }
+                    </div>
                 </div>
             </nav>
         `
