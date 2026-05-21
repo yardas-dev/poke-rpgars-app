@@ -1,9 +1,20 @@
 :root {
-    --bulma-orange-soft: hsla(
-        20deg,
+    --bulma-orange-h: 20deg;
+    --bulma-white-soft: hsl(
+        var(--bulma-white-h),
+        var(--bulma-white-s),
+        var(--bulma-scheme-main-l)
+    );
+    --bulma-light-soft: hsl(
+        var(--bulma-light-h),
+        var(--bulma-light-s),
+        var(--bulma-soft-l)
+    );
+    --bulma-orange-soft: hsl(
+        var(--bulma-orange-h),
         var(--bulma-danger-s),
-        var(--bulma-soft-l),
-    1);
+        var(--bulma-soft-l)
+    );
 }
 
 .navbar-item img {
@@ -17,12 +28,101 @@
     );
 }
 
-.is-pointer {
-    cursor: pointer;
+.has-background-white-soft {
+    background-color: var(--bulma-white-soft) !important;
 }
 
 .has-background-orange-soft {
     background-color: var(--bulma-orange-soft);
+}
+
+.button.is-info-soft {
+    background-color: var(--bulma-info-soft);
+}
+
+.button.is-success-soft {
+    background-color: var(--bulma-success-soft);
+}
+
+.button.is-warning-soft {
+    background-color: var(--bulma-warning-soft);
+}
+
+.button.is-danger-soft {
+    background-color: var(--bulma-danger-soft);
+}
+
+.button.is-orange-soft {
+    background-color: var(--bulma-orange-soft);
+}
+
+.table.is-rounded {
+    border-radius: 0.75rem;
+    overflow: clip;
+}
+
+img.is-rounded-soft {
+    border-radius: 0.5rem;
+}
+
+.table td.is-light-soft {
+    background-color: var(--bulma-light-soft);
+    border-color: var(--bulma-light-soft);
+}
+
+.table td.is-info-soft {
+    background-color: var(--bulma-info-soft);
+    border-color: var(--bulma-info-soft);
+}
+
+.table td.is-success-soft {
+    background-color: var(--bulma-success-soft);
+    border-color: var(--bulma-success-soft);
+}
+
+.table td.is-warning-soft {
+    background-color: var(--bulma-warning-soft);
+    border-color: var(--bulma-warning-soft);
+}
+
+.table td.is-danger-soft {
+    background-color: var(--bulma-danger-soft);
+    border-color: var(--bulma-danger-soft);
+}
+
+.table td.is-orange-soft {
+    background-color: var(--bulma-orange-soft);
+    border-color: var(--bulma-orange-soft);
+}
+
+.table tr.is-light-soft {
+    --bulma-table-cell-background-color: var(--bulma-light-soft);
+    --bulma-table-cell-border-color: var(--bulma-light-soft);
+}
+
+.table tr.is-info-soft {
+    --bulma-table-cell-background-color: var(--bulma-info-soft);
+    --bulma-table-cell-border-color: var(--bulma-info-soft);
+}
+
+.table tr.is-success-soft {
+    --bulma-table-cell-background-color: var(--bulma-success-soft);
+    --bulma-table-cell-border-color: var(--bulma-success-soft);
+}
+
+.table tr.is-warning-soft {
+    --bulma-table-cell-background-color: var(--bulma-warning-soft);
+    --bulma-table-cell-border-color: var(--bulma-warning-soft);
+}
+
+.table tr.is-danger-soft {
+    --bulma-table-cell-background-color: var(--bulma-danger-soft);
+    --bulma-table-cell-border-color: var(--bulma-danger-soft);
+}
+
+.table tr.is-orange-soft {
+    --bulma-table-cell-background-color: var(--bulma-orange-soft);
+    --bulma-table-cell-border-color: var(--bulma-orange-soft);
 }
 
 img.is-dimmed {

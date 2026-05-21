@@ -1,8 +1,6 @@
 import { html } from "https://cdn.jsdelivr.net/npm/lit@3.3.3/+esm";
-
 import rutas from "./rutas.js";
 import { colecciones } from "./helpers/colecciones.js";
-
 import { ComponenteBase } from "./components/componente-base.js";
 import "./components/barra-navegacion.js";
 
